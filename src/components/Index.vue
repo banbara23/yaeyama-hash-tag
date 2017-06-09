@@ -1,7 +1,7 @@
 <template>
   <div class="index">
-    <h1>やえやまハッシュタグ</h1>
-    <h2>八重山のTwitterハッシュタグが大集合</h2>
+
+    <p>八重山のTwitterハッシュタグが大集合</p>
     <div class="timeline">
       <time-line :query='"%E5%85%AB%E9%87%8D%E5%B1%B1"'
                  :id='"872701594977976320"'
@@ -20,13 +20,13 @@
                  :id='"872723027510779904"'
                  :word='"小浜島"' />
       <time-line :query='"%E9%B3%A9%E9%96%93%E5%B3%B6"'
-                 :id='"872723438430855168"'
+                 :id='"873090361656090625"'
                  :word='"鳩間島"' />
       <time-line :query='"%E9%BB%92%E5%B3%B6"'
-                 :id='"872723666856890368"'
+                 :id='"873094072998649856"'
                  :word='"黒島"' />
       <time-line :query='"%E6%B3%A2%E7%85%A7%E9%96%93%E5%B3%B6"'
-                 :id='"872723666856890368"'
+                 :id='"873094266548928512"'
                  :word='"波照間島"' />
     </div>
   </div>
@@ -44,20 +44,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
 
 a {
   color: #42b983;
