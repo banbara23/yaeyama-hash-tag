@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <nav class="orange darken-1">
-      <h4 class="white-text">やえやまハッシュタグ</h4>
-    </nav>
+    <navbar />
     <router-view></router-view>
   
     <footer class="page-footer orange darken-1">
@@ -39,8 +37,12 @@
 </template>
 
 <script>
+import navbar from './components/Navbar.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    navbar
+  }
 }
 </script>
 
