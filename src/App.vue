@@ -37,6 +37,10 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+import firebaseconfig from '../firebase-config.js'
+firebase.initializeApp(firebaseconfig);
+
 import navbar from './components/Navbar.vue'
 export default {
   name: 'app',
