@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
+import Twitter from '@/components/twitter/Base'
+import Instagram from '@/components/instagram/Base'
 
 Vue.use(Router)
 
@@ -8,8 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'top',
       component: Index
+    },
+    {
+      path: '/twitter',
+      name: 'twitter',
+      component: Twitter
+    },
+    {
+      path: '/instagram',
+      name: 'instagram',
+      component: Instagram
     }
   ]
 })

@@ -31,5 +31,6 @@ export default {
 <style>
 div#twitter {
   display: inline-block;
+  margin: 8px;
 }
 </style>
