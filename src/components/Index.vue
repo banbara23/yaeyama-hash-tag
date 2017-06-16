@@ -1,16 +1,17 @@
 <template>
   <div class="index">
-    <twitter />
+    <p>八重山のハッシュタグが大集合</p>
+    <!--<twitter />-->
   </div>
 </template>
 
 <script>
-import twitter from './twitter/Base'
+// import twitter from './twitter/Base'
 
 export default {
   name: 'index',
   components: {
-    twitter
+    // twitter
   }
 }
 </script>
