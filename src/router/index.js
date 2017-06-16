@@ -14,12 +14,12 @@ export default new Router({
       component: Index
     },
     {
-      path: '/twitter',
+      path: '/twitter/:tag',
       name: 'twitter',
       component: Twitter
     },
     {
-      path: '/instagram',
+      path: '/instagram/:tag',
       name: 'instagram',
       component: Instagram
     }
