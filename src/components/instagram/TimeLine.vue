@@ -1,6 +1,6 @@
 <template>
   <div id="instagram">
-    <h5>{{tag}}</h5>
+    <h5>{{name}}</h5>
   
     <div class="card left-align"
          v-if="media"
@@ -23,14 +23,10 @@
 </template>
 
 <script>
+
 export default {
   name: 'instagram',
-  props: ['tag', 'media'],
-  data() {
-    return {
-      media: null
-    }
-  }
+  props: ['name', 'media']
 }
 </script>
 

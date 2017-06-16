@@ -2,18 +2,18 @@
   <div id="twitter"
        class="card">
     <a class="twitter-timeline"
-       width='auto'
+       width='600px'
        :data-height="height"
        data-chrome="nofooter"
        :href="`https://twitter.com/hashtag/${query}`"
-       :data-widget-id="id">#{{word}} のツイート</a>
+       :data-widget-id="id">#{{name}} のツイート</a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'twitter',
-  props: ['query', 'id', 'word', 'height'],
+  props: ['query', 'id', 'name', 'height'],
   mounted: function () {
     (!function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
@@ -32,6 +32,5 @@ export default {
 <style>
 div#twitter {
   display: inline-block;
-  margin: 8px;
 }
 </style>
