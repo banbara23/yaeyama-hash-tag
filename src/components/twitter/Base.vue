@@ -1,37 +1,39 @@
 <template>
   <div id="timeline">
-    <!-- Dropdown Trigger -->
-    <a class='dropdown-button btn'
-       href='#'
-       data-activates='dropdown1'>タグを選択<i class="material-icons right">arrow_drop_down</i></a>
-  
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1'
-        class='dropdown-content'>
-      <li><a href="#!">#八重山</a></li>
-      <li><a href="#!">#石垣島</a></li>
-      <li><a href="#!">#西表島</a></li>
-      <li><a href="#!">#竹富島</a></li>
-      <li><a href="#!">#小浜島</a></li>
-      <li><a href="#!">#黒島</a></li>
-      <li><a href="#!">#鳩間島</a></li>
-      <li><a href="#!">#波照間島</a></li>
-      <li><a href="#!">すべて</a></li>
-    </ul>
-    <all />
+    <!--<all />-->
+    {{param}}
+    <time-line v-if="param"
+               :query='param.tag'
+               :id='param.id'
+               :word='param.name'
+               :height="height" />
   </div>
 </template>
 
 <script>
-import all from './All.vue';
+// import all from './All.vue';
+import TimeLine from './TimeLine.vue';
+import hashtags from '../hashtags.js';
+
 export default {
   name: 'timeline',
   components: {
-    all
+    // all,
+    TimeLine
   },
-  props: ['query', 'id', 'word'],
+  data() {
+    return {
+      param: null,
+      height: 1000
+    }
+  },
   mounted() {
-    $(".dropdown-button").dropdown();
+    hashtags.forEach(function (elm) {
+      if (elm.code == this.$route.params.code) {
+        this.param = elm;
+        return;
+      }
+    }, this);
   }
 }
 </script>

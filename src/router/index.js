@@ -14,7 +14,7 @@ export default new Router({
       component: Index
     },
     {
-      path: '/twitter/:tag',
+      path: '/twitter/:code',
       name: 'twitter',
       component: Twitter
     },

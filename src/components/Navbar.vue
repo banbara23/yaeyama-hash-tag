@@ -23,35 +23,36 @@
     </div>
     <ul id='dropdown_twitter'
         class='dropdown-content'>
+      <!--<li><router-link :to="'twitter/yaeyama'">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>
+          <li><router-link :to="twitter/yaeyama">#八重山</router-link></li>-->
+  
       <li v-for="tag in tags">
-        <router-link :to="{ path:`twitter/${tag.code}` }">#{{tag.display}}</router-link>
+        <router-link :to="{ path:`twitter/${tag.code}` }">#{{tag.name}}</router-link>
+        <!--<router-link :to="{ name 'twitter', params: {code: 'yaeyama' } }">#{{tag.name}}</router-link>-->
+  
       </li>
     </ul>
     <ul id='dropdown_instagram'
         class='dropdown-content'>
       <li v-for="tag in tags">
-        <router-link :to="{ path:`instagram/${tag.code}` }">#{{tag.display}}</router-link>
+        <router-link :to="{ path:`instagram/${tag.code}` }">#{{tag.name}}</router-link>
       </li>
     </ul>
   
   </nav>
 </template>
 <script>
+const hashtags = require("./hashtags.js");
 export default {
   name: 'navbar',
   data() {
     return {
-      tags: [
-        { display: '八重山', code: "yaeyama" },
-        { display: '石垣島', code: "ishigaki" },
-        { display: '西表島', code: "iriomote" },
-        { display: '竹富島', code: "taketomi" },
-        { display: '小浜島', code: "kohama" },
-        { display: '黒島', code: "kuroshima" },
-        { display: '波照間島', code: "hateruma" },
-        { display: '鳩間島', code: "hatoma" },
-        { display: '全て', code: "all" }
-      ]
+      tags: hashtags
     }
   }
 }
