@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import Twitter from '@/components/Base'
+import Base from '@/components/Base'
 import Instagram from '@/components/instagram/Base'
+import Yaeyama from '@/components/Yaeyama'
+import Ishigaki from '@/components/Ishigaki'
 
 Vue.use(Router)
 
@@ -14,16 +16,16 @@ export default new Router({
       component: Index,
     },
     {
+      path: '/yaeyama',
+      component: Yaeyama
+    },
+    {
+      path: '/ishigaki',
+      component: Ishigaki
+    },
+    {
       path: '/:code',
-      component: Twitter
-    },
-    {
-      path: 'twitter/:code',
-      component: Twitter
-    },
-    {
-      path: 'instagram/:tag',
-      component: Instagram
+      component: Base
     }
   ]
 })

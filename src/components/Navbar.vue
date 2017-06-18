@@ -4,9 +4,7 @@
       <router-link to="/" class="brand-logo center">やえやまハッシュタグ</router-link>
     </div>
     <ul>
-      <li>
-        <router-link to="/yaeyama">#八重山</router-link>
-      </li>
+      <router-link tag="li" to="/yaeyama"><a>#八重山</a></router-link>
       <li>
         <router-link to="/ishigaki">#石垣島</router-link>
       </li>

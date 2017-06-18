@@ -1,5 +1,5 @@
 <template>
-  <div id="base" class="row">
+  <div id="yaeyama" class="row">
     <div class="col s12">
       <ul class="tabs ">
         <li class="tab col s6">
@@ -11,10 +11,10 @@
       </ul>
     </div>
     <div id="contents1" class="col s12 m12">
-      <twitter v-if="params" :query="params.tag" :id='params.id' :name='params.name' :height="3000" />
+      <twitter :query='"%E5%85%AB%E9%87%8D%E5%B1%B1"' :id='"872701594977976320"' :name='"八重山"' :height="'2000'" />
     </div>
     <div id="contents2" class="col s12 m8 offset-m2 l6 offset-l3">
-      <instagram :tag="'#八重山'" :media="instaData.media" />
+      <instagram :tag="'#八重山'" :media="response.media" />
     </div>
   </div>
 </template>
@@ -23,7 +23,6 @@
 // import all from './All.vue';
 import twitter from './twitter/TimeLine.vue';
 import instagram from './instagram/TimeLine.vue';
-import hashtags from './hashtags.js';
 import firebase from 'firebase'
 const db = firebase.database()
 
@@ -33,25 +32,13 @@ export default {
     twitter,
     instagram
   },
-  data() {
-    return {
-      params: null,
-      height: 1000
-    }
-  },
   mounted() {
     $('ul.tabs').tabs()
-    hashtags.forEach(function (elm) {
-      if (elm.code == this.$route.params.code) {
-        this.params = elm;
-        return;
-      }
-    }, this);
   },
   firebase() {
     return {
-      instaData: {
-        source: db.ref('/instagram').child(this.$route.params.code),
+      response: {
+        source: db.ref('/instagram').child('yaeyama'),
         asObject: true,
         readyCallback: function () {
           // this.$Progress.finish();
@@ -63,7 +50,7 @@ export default {
 </script>
 
 <style>
-div#base {
-  margin-top: 8px;
+div#yaeyamabase {
+  margin: 8px;
 }
 </style>

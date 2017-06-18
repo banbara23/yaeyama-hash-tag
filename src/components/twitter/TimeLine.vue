@@ -14,7 +14,8 @@
 export default {
   name: 'twitter',
   props: ['query', 'id', 'name', 'height'],
-  mounted: function () {
+  created() {
+    console.log("created - TimeLine.vue")
     (!function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
       if (!d.getElementById(id)) {
