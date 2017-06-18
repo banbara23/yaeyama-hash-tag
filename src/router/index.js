@@ -5,6 +5,12 @@ import Base from '@/components/Base'
 import Instagram from '@/components/instagram/Base'
 import Yaeyama from '@/components/Yaeyama'
 import Ishigaki from '@/components/Ishigaki'
+import Iriomote from '@/components/Iriomote'
+import Taketomi from '@/components/Taketomi'
+import Kohama from '@/components/Kohama'
+import Kuroshima from '@/components/Kuroshima'
+import Hatoma from '@/components/Hatoma'
+import Hateruma from '@/components/Hateruma'
 
 Vue.use(Router)
 
@@ -24,8 +30,28 @@ export default new Router({
       component: Ishigaki
     },
     {
-      path: '/:code',
-      component: Base
-    }
+      path: '/iriomote',
+      component: Iriomote
+    },
+    {
+      path: '/taketomi',
+      component: Taketomi
+    },
+    {
+      path: '/kohama',
+      component: Kohama
+    },
+    {
+      path: '/kuroshima',
+      component: Kuroshima
+    },
+    {
+      path: '/hatoma',
+      component: Hatoma
+    },
+    {
+      path: '/hateruma',
+      component: Hateruma
+    },
   ]
 })
