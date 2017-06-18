@@ -4,12 +4,12 @@
   
     <div class="col s12 m6 l4" v-for="m in media">
       <div class="card" v-if="media">
-        <div class="card-image waves-effect waves-block waves-light">
+        <div class="card-image waves-effect">
           <img class="activator" :src="m.thumbnail_src">
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">
-            <i class="material-icons right">close</i>
+            <i class="material-icons Large right">close</i>
           </span>
           <p class="left-align">{{m.post_date}}</p>
           <p>{{m.caption}}</p>
