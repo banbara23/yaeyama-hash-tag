@@ -1,7 +1,6 @@
 <template>
   <div id="instagram">
     <h4>{{name}}</h4>
-  
     <div class="col s12 m6 l4" v-for="m in media">
       <div class="card" v-if="media">
         <div class="card-image waves-effect">
@@ -11,9 +10,9 @@
           <span class="card-title grey-text text-darken-4">
             <i class="material-icons Large right">close</i>
           </span>
-          <p class="left-align">{{m.post_date}}</p>
-          <p>{{m.caption}}</p>
-          <a class="teal lighten-5 waves-effect waves-teal btn-flat" :href="`https://www.instagram.com/p/${m.code}/`" target="_blank">Instagramで見る</a>
+          <p class="left-align">{{m.data}}</p>
+          <p class="left-align">{{m.caption}}</p>
+          <a id="insta-btn" class="orange lighten-5 waves-effect waves-teal btn-flat left-align" :href="`https://www.instagram.com/p/${m.code}/`" target="_blank">Instagramで見る</a>
         </div>
       </div>
     </div>
@@ -29,12 +28,11 @@ export default {
 }
 </script>
 
-<style>
-/*img#thumb {
-  width: 300px;
-}*/
-
-img.activator {
-  object-fit: cover;
+<style scoped>
+h4 {
+  font-weight: normal;
+}
+#insta-btn {
+  margin-top: 10px;
 }
 </style>
