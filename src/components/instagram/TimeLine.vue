@@ -5,7 +5,7 @@
          v-for="m in media">
       <div class="card"
            v-if="media">
-        <div class="card-image waves-effect">
+        <div class="card-image">
           <img class="activator"
                :src="m.thumbnail_src">
         </div>
