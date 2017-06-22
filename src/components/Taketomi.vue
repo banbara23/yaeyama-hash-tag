@@ -2,7 +2,7 @@
   <div id="yaeyama" class="container">
     <vue-progress-bar />
     <div class="row">
-      <instagram :name="'#竹富島'" :media="response.media" />
+      <instagram :name="'#竹富島'" :media="response" />
     </div>
   </div>
 </template>
@@ -23,8 +23,7 @@ export default {
   firebase() {
     return {
       response: {
-        source: db.ref('/instagram').child('taketomi'),
-        asObject: true,
+        source: db.ref('/public').child('taketomi'),
         readyCallback: function () {
           this.$Progress.finish();
         }
