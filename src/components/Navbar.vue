@@ -26,6 +26,9 @@
       <li>
         <router-link tag="li" to="/hateruma" activeClass='active'><a>#波照間島</a></router-link>
       </li>
+      <li>
+        <router-link tag="li" to="/yonaguni" activeClass='active'><a>#与那国</a></router-link>
+      </li>
     </ul>
   
   </nav>

@@ -9,6 +9,7 @@ import Kohama from '@/components/Kohama'
 import Kuroshima from '@/components/Kuroshima'
 import Hatoma from '@/components/Hatoma'
 import Hateruma from '@/components/Hateruma'
+import Yonaguni from '@/components/Yonaguni'
 
 Vue.use(Router)
 
@@ -51,5 +52,9 @@ export default new Router({
       path: '/hateruma',
       component: Hateruma
     },
+    {
+      path: '/yonaguni',
+      component: Yonaguni
+    }
   ]
 })
