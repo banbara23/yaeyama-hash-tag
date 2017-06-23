@@ -4,27 +4,27 @@
       <router-link to="/" class="brand-logo center">やえやまハッシュタグ</router-link>
     </div>
     <ul>
-      <router-link tag="li" to="/yaeyama"><a>#八重山</a></router-link>
+      <router-link tag="li" to="/yaeyama" activeClass='active'><a>#八重山</a></router-link>
       <li>
-        <router-link to="/ishigaki">#石垣島</router-link>
+        <router-link tag="li" to="/ishigaki" activeClass='active'><a>#石垣島</a></router-link>
       </li>
       <li>
-        <router-link to="/iriomote">#西表島</router-link>
+        <router-link tag="li" to="/iriomote" activeClass='active'><a>#西表島</a></router-link>
       </li>
       <li>
-        <router-link to="/taketomi">#竹富島</router-link>
+        <router-link tag="li" to="/taketomi" activeClass='active'><a>#竹富島</a></router-link>
       </li>
       <li>
-        <router-link to="/kohama">#小浜島</router-link>
+        <router-link tag="li" to="/kohama" activeClass='active'><a>#小浜島</a></router-link>
       </li>
       <li>
-        <router-link to="/kuroshima">#黒島</router-link>
+        <router-link tag="li" to="/kuroshima" activeClass='active'><a>#黒島</a></router-link>
       </li>
       <li>
-        <router-link to="/hatoma">#鳩間島</router-link>
+        <router-link tag="li" to="/hatoma" activeClass='active'><a>#鳩間島</a></router-link>
       </li>
       <li>
-        <router-link to="/hateruma">#波照間島</router-link>
+        <router-link tag="li" to="/hateruma" activeClass='active'><a>#波照間島</a></router-link>
       </li>
     </ul>
   
@@ -41,3 +41,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.router-link-active > a,
+ul > li > a:hover {
+  background-color: #fff;
+}
+</style>
