@@ -11,6 +11,7 @@
 import instagram from './instagram/TimeLine.vue';
 import firebase from 'firebase'
 const db = firebase.database()
+import config from '../timeline-config.js'
 
 export default {
   name: 'timeline',
@@ -23,7 +24,7 @@ export default {
   firebase() {
     return {
       response: {
-        source: db.ref('/public').child('hateruma'),
+        source: db.ref('/public').child('hateruma').limitToFirst(config.max),
         readyCallback: function () {
           this.$Progress.finish();
         }
