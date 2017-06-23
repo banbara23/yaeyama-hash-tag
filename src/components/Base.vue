@@ -23,7 +23,7 @@
 // import all from './All.vue';
 import twitter from './twitter/TimeLine.vue';
 import instagram from './instagram/TimeLine.vue';
-import hashtags from './hashtags.js';
+import hashtags from '../hashtags.js';
 import firebase from 'firebase'
 const db = firebase.database()
 

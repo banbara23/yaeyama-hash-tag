@@ -31,7 +31,7 @@
   </nav>
 </template>
 <script>
-const hashtags = require("./hashtags.js");
+const hashtags = require("../hashtags.js");
 export default {
   name: 'navbar',
   data() {
