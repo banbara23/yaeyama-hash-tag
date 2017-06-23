@@ -41,10 +41,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.router-link-active > a,
-ul > li > a:hover {
-  background-color: #fff;
-}
-</style>
