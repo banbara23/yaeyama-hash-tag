@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <vue-progress-bar />
-    <p>Instagramの八重山のハッシュタグ画像が大集合</p>
+    <p class="center">Instagramの八重山のハッシュタグ画像が大集合！</p>
     <div class="container">
       <div class="row">
         <div class="col s6 m4 l4"
