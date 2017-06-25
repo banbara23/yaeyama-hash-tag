@@ -8,8 +8,8 @@
         <div id="placeHolder"
              v-else="url"></div>
       </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">#{{title}}</span>
+      <div class="card-content center-align">
+        <span id="card-title" class="activator grey-text text-darken-4">#{{title}}</span>
       </div>
       </router-link>
     </div>
@@ -28,5 +28,8 @@ export default {
   width: 300px;
   height: 300px;
   background-color: #ccc;
+}
+#card-title {
+  font-size: 18px;
 }
 </style>
