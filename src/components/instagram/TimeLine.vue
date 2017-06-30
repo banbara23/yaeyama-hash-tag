@@ -5,30 +5,36 @@
          v-for="m in media">
       <div class="card"
            v-if="media">
-        <a href="#modal"
-           @click="openModal">
+        <a @click="show(m)">
           <div class="card-image">
             <img class="activator"
                  :src="m.thumbnail_src">
           </div>
         </a>
       </div>
-      <!-- Modal Structure -->
-      <div id="modal"
-           class="modal modal-fixed-footer">
-        <div class="modal-content">
-          <img :src="m.display_src">
-          <p class="left-align">{{m.data}}</p>
-          <p class="left-align">{{m.caption}}</p>
-        </div>
-        <div class="modal-footer">
-          <a :href="`https://www.instagram.com/p/${m.code}/`"
-             target="_blank"
-             class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramを開く</a>
-        </div>
-      </div>
     </div>
   
+    <!-- Modal -->
+    <modal name="img-detail"
+           :width="400"
+           :height="600"
+           :minWidth="200"
+           :minHeight="200"
+           :adaptive="true"
+           :resizable="true"
+           :draggable="true">
+      <div slot="top-right">
+        <button @click="$modal.hide('img-detail')">
+          ❌
+        </button>
+      </div>
+      <img :src="modalSrc"
+           style="max-width: 100%; height: auto;">
+      <div style="padding: 4px; overflow: auto;">
+        <p>{{modalDate}}</p>
+        <p>{{modalCaption}}</p>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -37,13 +43,22 @@
 export default {
   name: 'instagram',
   props: ['name', 'media'],
+  data() {
+    return {
+      modalSrc: null,
+      modalDate: null,
+      modalCaption: null
+    }
+  },
   methods: {
-    openModal: function () {
-      $('.modal').modal({
-        inDuration: 200,
-        outDuration: 200,
-        startingTop: '4%',
-      });
+    show(m) {
+      this.modalSrc = m.display_src;
+      this.modalDate = m.data;
+      this.modalCaption = m.caption;
+      this.$modal.show('img-detail');
+    },
+    hide() {
+      this.$modal.hide('img-detail');
     }
   }
 }
@@ -54,7 +69,4 @@ h4 {
   font-weight: normal;
 }
 
-#modal-img {
-  object-fit: cover;
-}
 </style>

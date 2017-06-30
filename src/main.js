@@ -7,9 +7,11 @@ import vuefire from 'vuefire'
 import VueProgressBar from 'vue-progressbar'
 import 'materialize-css/dist/js/materialize.js'
 import 'materialize-css/dist/css/materialize.min.css'
+import vmodal from 'vue-js-modal'
 
 Vue.config.productionTip = false
 Vue.use(vuefire)
+Vue.use(vmodal)
 
 const options = {
   color: '#bffaf3',
