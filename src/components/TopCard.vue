@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: '#top-card',
+  name: 'top-card',
   props: ['title', 'code', 'url']
 }
 </script>
