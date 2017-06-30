@@ -1,8 +1,8 @@
 <template>
   <div id="yaeyama" class="container">
-    <vue-progress-bar />
+    <vue-progress-bar></vue-progress-bar>
     <div class="row">
-      <instagram :name="'#八重山'" :media="response" />
+      <instagram :name="'#八重山'" :media="response"></instagram>
     </div>
   </div>
 </template>

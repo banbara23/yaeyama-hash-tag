@@ -1,7 +1,7 @@
 <template>
   <nav id="navbar" class="nav-extended orange darken-1">
     <div class="nav-wrapper">
-      <router-link to="/" class="brand-logo center">やえやまハッシュタグ</router-link>
+      <router-link to="/" class="brand-logo center">八重山ハッシュタグ</router-link>
     </div>
     <ul>
       <router-link tag="li" to="/yaeyama" activeClass='active'><a>#八重山</a></router-link>
