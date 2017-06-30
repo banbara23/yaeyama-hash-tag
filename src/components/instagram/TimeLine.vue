@@ -5,20 +5,26 @@
          v-for="m in media">
       <div class="card"
            v-if="media">
-        <div class="card-image">
-          <img class="activator"
-               :src="m.thumbnail_src">
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">
-              <i class="material-icons Large right">close</i>
-            </span>
+        <a href="#modal"
+           @click="openModal">
+          <div class="card-image">
+            <img class="activator"
+                 :src="m.thumbnail_src">
+          </div>
+        </a>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modal"
+           class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <img :src="m.display_src">
           <p class="left-align">{{m.data}}</p>
           <p class="left-align">{{m.caption}}</p>
-          <a id="insta-btn"
-             class="orange lighten-5 waves-effect waves-teal btn-flat left-align"
-             :href="`https://www.instagram.com/p/${m.code}/`"
-             target="_blank">Instagramで見る</a>
+        </div>
+        <div class="modal-footer">
+          <a :href="`https://www.instagram.com/p/${m.code}/`"
+             target="_blank"
+             class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramを開く</a>
         </div>
       </div>
     </div>
@@ -30,7 +36,16 @@
 
 export default {
   name: 'instagram',
-  props: ['name', 'media']
+  props: ['name', 'media'],
+  methods: {
+    openModal: function () {
+      $('.modal').modal({
+        inDuration: 200,
+        outDuration: 200,
+        startingTop: '4%',
+      });
+    }
+  }
 }
 </script>
 
@@ -39,7 +54,7 @@ h4 {
   font-weight: normal;
 }
 
-#insta-btn {
-  margin-top: 10px;
+#modal-img {
+  object-fit: cover;
 }
 </style>
