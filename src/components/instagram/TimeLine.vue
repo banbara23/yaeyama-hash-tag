@@ -39,7 +39,8 @@
 </template>
 
 <script>
-
+var $ = require('jquery');
+require('fancybox')($);
 export default {
   name: 'instagram',
   props: ['name', 'media'],
