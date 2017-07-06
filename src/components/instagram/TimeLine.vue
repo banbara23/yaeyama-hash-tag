@@ -5,7 +5,7 @@
          v-for="m in media">
       <div class="card"
            v-if="media">
-        <a @click="show(m)">
+        <a id="single_1" @click="show(m)" href="#single_1">
           <div class="card-image">
             <img class="activator"
                  :src="m.thumbnail_src">
@@ -13,34 +13,23 @@
         </a>
       </div>
     </div>
-  
+
     <!-- Modal -->
-    <modal name="img-detail"
-           :width="400"
-           :height="600"
-           :minWidth="200"
-           :minHeight="200"
-           :adaptive="true"
-           :resizable="true"
-           :draggable="true">
-      <div slot="top-right">
-        <button @click="$modal.hide('img-detail')">
-          ❌
-        </button>
-      </div>
+    <div id="single_1">
       <img :src="modalSrc"
            style="max-width: 100%; height: auto;">
       <div style="padding: 4px; overflow: auto;">
         <p>{{modalDate}}</p>
         <p>{{modalCaption}}</p>
       </div>
-    </modal>
+    </div>
   </div>
 </template>
 
 <script>
 var $ = require('jquery');
 require('fancybox')($);
+
 export default {
   name: 'instagram',
   props: ['name', 'media'],
@@ -53,10 +42,16 @@ export default {
   },
   methods: {
     show(m) {
-      this.modalSrc = m.display_src;
+      this.modalSrc = m.thumbnail_src;
       this.modalDate = m.data;
       this.modalCaption = m.caption;
-      this.$modal.show('img-detail');
+       $("#single_1").fancybox({
+          helpers: {
+              title : {
+                  type : 'float'
+              }
+          }
+      });
     },
     hide() {
       this.$modal.hide('img-detail');
