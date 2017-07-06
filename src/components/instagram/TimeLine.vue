@@ -1,39 +1,31 @@
 <template>
   <div id="instagram">
     <h4>{{name}}</h4>
-    <div class="col s12 m6 l4"
-         v-for="m in media">
-      <div class="card"
-           v-if="media">
-        <a @click="show(m)">
-          <div class="card-image">
-            <img class="activator"
-                 :src="m.thumbnail_src">
-          </div>
-        </a>
+    <div class="col s6 m6 l4" v-for="m in media" :key="m.code">
+      <div class="card" @click="show(m)" v-if="media">
+        <div class="card-image">
+          <img class="activator" :src="m.thumbnail_src">
+        </div>
       </div>
     </div>
   
     <!-- Modal -->
-    <modal name="img-detail"
-           :width="400"
-           :height="600"
-           :minWidth="200"
-           :minHeight="200"
-           :adaptive="true"
-           :resizable="true"
-           :draggable="true">
+    <modal name="img-detail" :height="modalHeight" :width="modalWidth" :adaptive="true">
       <div slot="top-right">
         <button @click="$modal.hide('img-detail')">
           ❌
         </button>
       </div>
-      <img :src="modalSrc"
-           style="max-width: 100%; height: auto;">
+      <!--<div class="card">
+          <div class="card-image">-->
+      <img class="activator" :src="modalSrc" style="max-width: 100%; height: auto;">
       <div style="padding: 4px; overflow: auto;">
         <p>{{modalDate}}</p>
         <p>{{modalCaption}}</p>
       </div>
+      <a class="waves-effect waves-light btn">instagram</a>
+      <!--</div>
+        </div>-->
     </modal>
   </div>
 </template>
@@ -47,10 +39,13 @@ export default {
     return {
       modalSrc: null,
       modalDate: null,
-      modalCaption: null
+      modalCaption: null,
+      modalHeight: window.innerHeight - window.innerHeight / 9,
+      modalWidth: window.innerWidth - window.innerWidth / 9,
     }
   },
   methods: {
+
     show(m) {
       this.modalSrc = m.display_src;
       this.modalDate = m.data;
@@ -69,4 +64,7 @@ h4 {
   font-weight: normal;
 }
 
+div.card-image {
+  cursor: pointer;
+}
 </style>
