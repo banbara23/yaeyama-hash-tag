@@ -17,15 +17,17 @@
         </button>
       </div>
       <!--<div class="card">
-          <div class="card-image">-->
+                  <div class="card-image">-->
       <img class="activator" :src="modalSrc" style="max-width: 100%; height: auto;">
-      <div style="padding: 4px; overflow: auto;">
-        <p>{{modalDate}}</p>
+      <div style="padding: 4px;">
+        <div style="display:inline-block;">
+          <p style="display: inline;">{{modalDate}}</p>
+          <a class="waves-effect waves-light btn" :href="`https://www.instagram.com/p/${modalCode}/`" target="_blank" >Instagram</a>
+        </div>
         <p>{{modalCaption}}</p>
       </div>
-      <a class="waves-effect waves-light btn">instagram</a>
       <!--</div>
-        </div>-->
+                </div>-->
     </modal>
   </div>
 </template>
@@ -37,6 +39,7 @@ export default {
   props: ['name', 'media'],
   data() {
     return {
+      modalCode: null,
       modalSrc: null,
       modalDate: null,
       modalCaption: null,
@@ -47,6 +50,7 @@ export default {
   methods: {
 
     show(m) {
+      this.modalCode = m.code;
       this.modalSrc = m.display_src;
       this.modalDate = m.data;
       this.modalCaption = m.caption;
