@@ -5,9 +5,11 @@ import App from './App'
 import router from './router'
 import vuefire from 'vuefire'
 import VueProgressBar from 'vue-progressbar'
-import 'materialize-css/dist/js/materialize.js'
-import 'materialize-css/dist/css/materialize.min.css'
+// import 'materialize-css/dist/js/materialize.js'
+// import 'materialize-css/dist/css/materialize.min.css'
 import vmodal from 'vue-js-modal'
+import '../semantic/semantic.js'
+import '../semantic/semantic.css'
 
 Vue.config.productionTip = false
 Vue.use(vuefire)
