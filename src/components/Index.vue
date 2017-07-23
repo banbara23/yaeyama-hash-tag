@@ -1,11 +1,13 @@
 <template>
   <div class="index">
     <vue-progress-bar />
-    <p class="center">Instagramの八重山のハッシュタグ画像が大集合！</p>
+    <p class="center">八重山諸島の「なう」を眺めよう！
+    </p>
     <div class="container">
       <div class="row">
         <div class="col s6 m4 l4"
-             v-for="data in result">
+             v-for="data in result"
+             :key="data.code">
           <top-card :title="data.title"
                     :code="data.code"
                     :url="data.url"></top-card>

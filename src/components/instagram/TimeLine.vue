@@ -9,26 +9,22 @@
       </div>
     </div>
   
-    <!-- Modal -->
-    <modal name="img-detail" :height="modalHeight" :width="modalWidth" :adaptive="true">
-      <div slot="top-right">
-        <button @click="$modal.hide('img-detail')">
-          ❌
-        </button>
-      </div>
-      <!--<div class="card">
-                  <div class="card-image">-->
-      <img class="activator" :src="modalSrc" style="max-width: 100%; height: auto;">
-      <div style="padding: 4px;">
-        <div style="display:inline-block;">
-          <p style="display: inline;">{{modalDate}}</p>
-          <a class="waves-effect waves-light btn" :href="`https://www.instagram.com/p/${modalCode}/`" target="_blank" >Instagram</a>
+    <!-- Modal Structure -->
+    <div id="img-detail" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-image">
+            <img class="activator" :src="modalSrc">
+          </div>
         </div>
         <p>{{modalCaption}}</p>
+        <p>{{modalDate}}</p>
       </div>
-      <!--</div>
-                </div>-->
-    </modal>
+      <div class="modal-footer">
+        <a :href="modalInstagram" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramを見る</a>
+      </div>
+    </div>
+  
   </div>
 </template>
 
@@ -39,26 +35,29 @@ export default {
   props: ['name', 'media'],
   data() {
     return {
-      modalCode: null,
       modalSrc: null,
       modalDate: null,
       modalCaption: null,
-      modalHeight: window.innerHeight - window.innerHeight / 9,
-      modalWidth: window.innerWidth - window.innerWidth / 9,
+      modalInstagram: null
     }
+  },
+  mounted() {
+    $(document).ready(function () {
+      $('#img-detail').modal();
+    });
   },
   methods: {
 
     show(m) {
-      this.modalCode = m.code;
+      $('#img-detail').modal('open');
       this.modalSrc = m.display_src;
       this.modalDate = m.data;
       this.modalCaption = m.caption;
-      this.$modal.show('img-detail');
+      this.modalInstagram = `https://www.instagram.com/p/${m.code}/`;
     },
-    hide() {
-      this.$modal.hide('img-detail');
-    }
+    // hide() {
+    //   this.$modal.hide('img-detail');
+    // }
   }
 }
 </script>
