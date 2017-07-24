@@ -21,7 +21,8 @@
         <p>{{modalDate}}</p>
       </div>
       <div class="modal-footer">
-        <a :href="modalInstagram" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramを見る</a>
+        <a :href="modalInstagram" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramで見る</a>
+        <a :href="modalSrc" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">画像だけ見る</a>
       </div>
     </div>
   
