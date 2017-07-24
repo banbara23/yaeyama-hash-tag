@@ -3,7 +3,7 @@
     <div class="nav-wrapper">
       <router-link to="/" class="brand-logo center">八重山ハッシュタグ</router-link>
     </div>
-    <ul>
+    <ul class="container">
       <router-link tag="li" to="/yaeyama" activeClass='active'><a>#八重山</a></router-link>
       <li>
         <router-link tag="li" to="/ishigaki" activeClass='active'><a>#石垣島</a></router-link>
