@@ -1,3 +1,9 @@
+// https://console.firebase.google.com/project
 module.exports = {
-  https://console.firebase.google.com/project
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
