@@ -14,15 +14,18 @@
       <div class="modal-content">
         <div class="card">
           <div class="card-image">
+            <a :href="modalSrc" target="_blank">
             <img class="activator" :src="modalSrc">
+            </a>
           </div>
         </div>
         <p>{{modalCaption}}</p>
         <p>{{modalDate}}</p>
       </div>
       <div class="modal-footer">
-        <a :href="modalInstagram" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">Instagramで見る</a>
-        <a :href="modalSrc" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat ">画像だけ見る</a>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat"><img src="../../assets/ic_close_black_24px.svg" alt="image"></a>
+        <a :href="modalSrc" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat "><img src="../../assets/ic_image_black_24px.svg" alt="image"></a>
+        <a :href="modalInstagram" target="_blank" class="modal-action modal-close btn-flat"><img src="../../assets/ic_instagram.svg" alt="instagram"></a>
       </div>
     </div>
   
@@ -30,37 +33,35 @@
 </template>
 
 <script>
-
 export default {
-  name: 'instagram',
-  props: ['name', 'media'],
+  name: "instagram",
+  props: ["name", "media"],
   data() {
     return {
       modalSrc: null,
       modalDate: null,
       modalCaption: null,
       modalInstagram: null
-    }
+    };
   },
   mounted() {
-    $(document).ready(function () {
-      $('#img-detail').modal();
+    $(document).ready(function() {
+      $("#img-detail").modal();
     });
   },
   methods: {
-
     show(m) {
-      $('#img-detail').modal('open');
+      $("#img-detail").modal("open");
       this.modalSrc = m.display_src;
       this.modalDate = m.data;
       this.modalCaption = m.caption;
       this.modalInstagram = `https://www.instagram.com/p/${m.code}/`;
-    },
+    }
     // hide() {
     //   this.$modal.hide('img-detail');
     // }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -70,5 +71,10 @@ h4 {
 
 div.card-image {
   cursor: pointer;
+}
+
+.modal {
+  width: 90% !important;
+  height: 90% !important;
 }
 </style>
