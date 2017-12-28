@@ -23,8 +23,8 @@
         <p>{{modalDate}}</p>
       </div>
       <div class="modal-footer">
-        <a class="modal-action modal-close waves-effect waves-green btn-flat"><img src="../../assets/ic_close_black_24px.svg" alt="image"></a>
-        <a :href="modalSrc" target="_blank" class="modal-action modal-close waves-effect waves-green btn-flat "><img src="../../assets/ic_image_black_24px.svg" alt="image"></a>
+        <a class="modal-action modal-close btn-flat"><img src="../../assets/ic_close_black_24px.svg" alt="image"></a>
+        <a :href="modalSrc" target="_blank" class="modal-action modal-close btn-flat "><img src="../../assets/ic_image_black_24px.svg" alt="image"></a>
         <a :href="modalInstagram" target="_blank" class="modal-action modal-close btn-flat"><img src="../../assets/ic_instagram.svg" alt="instagram"></a>
       </div>
     </div>
@@ -45,8 +45,13 @@ export default {
     };
   },
   mounted() {
-    $(document).ready(function() {
-      $("#img-detail").modal();
+    $(document).ready(() => {
+      $("#img-detail").modal({
+        complete: () => {
+          // imgタグに前画像が残らないようにnullを入れておく
+          this.$data.modalSrc = null;
+        }
+      });
     });
   },
   methods: {
@@ -57,9 +62,6 @@ export default {
       this.modalCaption = m.caption;
       this.modalInstagram = `https://www.instagram.com/p/${m.code}/`;
     }
-    // hide() {
-    //   this.$modal.hide('img-detail');
-    // }
   }
 };
 </script>
